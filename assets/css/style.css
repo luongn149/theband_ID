@@ -1,0 +1,898 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* overflow-x:hidden; */
+    /* border: 1px solid red !important; */
+}
+html{
+    scroll-behavior: smooth;
+    font-family:Arial, Helvetica, sans-serif;
+}
+@font-face {
+    font-family: "albertus";
+    src: url("/assets/font/Albertus-Font/AlbertusMT.otf");
+}
+/* ============================================Common============================================== */
+.break-word { 
+    word-wrap: break-word;
+}
+
+.clear{
+    clear:both;
+}
+
+.text-white{
+    color:white !important;
+    /* opacity: 0.7; */
+}
+.main-font{
+    font-family:'albertus';
+}
+.text-red{
+    color: #911a20;
+}
+
+.text-center{
+    text-align: center!important;
+}
+
+.row{
+margin-left: -8px;
+margin-right: -8px;
+}
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.mt-8{
+    margin-top: 8px;
+}
+
+.mt-16{
+    margin-top: 16px;
+}
+
+.col{
+float:left;
+padding-left: 10px;
+padding-right: 10px;
+}
+.col1{
+    width: 100%;
+}
+.col2{
+width:50%;
+}
+
+.col3 {
+width: 33.33%;
+}
+
+.col4{
+    width: 25%;;
+}
+/*============================================ Main =================================================*/
+#overall{
+/* background-color: #FFF5EE; */
+background-color:whitesmoke;
+width: 100%;
+}
+
+#header{
+    height: 54px;
+    width: 100%;
+    background-color:#911a20;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    font-family:'albertus';
+    box-shadow: 0 0 5px black;
+    
+}
+#header .mobile-menu-btn ,
+#header .search-btn{
+float: right;
+padding: 0px 27px;
+cursor: pointer;
+position: absolute;
+top:0;
+right:0;
+}
+
+#header .search-btn:hover{
+    background-color:rgba(255 , 255 , 255 , 0.3);
+}
+#header .menu-icon,
+#header .search-icon{
+    color: black;
+    font-size: 24px;
+    line-height: 54px;
+}
+
+
+/* Navigation Button */
+
+#nav{
+    display: inline-block;
+
+}
+#nav > li{
+    display: inline-block;
+
+}
+#nav li{
+    position: relative;
+}
+#nav > li:hover > a{
+    color:black!important;
+    background-color:rgba(255 , 255 , 255 , 0.3);
+}
+#nav > li > a {
+    color: black;
+    text-transform: uppercase;
+}
+#nav li a{
+    /* color: white; */
+    display: block;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 54px;
+    text-decoration: none;
+    padding: 0px 50px;
+
+}
+#nav .nav-arrow-down{
+    font-size: 13px;
+}
+
+#nav li:hover .subnav {
+    display: block;
+}
+#nav, .subnav{
+    list-style: none;
+}
+#nav .subnav{
+    position: absolute;
+    top:100%;
+    left:0;
+    background-color:#911a20;
+    border: solid 1px #333 ;
+    box-shadow: 0 0 10px rgba(0 , 0 , 0 , 0.3);
+    display: none;
+}
+#nav .subnav li:hover a{
+    color:black;
+    background-color:rgba(255 , 255 , 255 , 0.3);
+}
+
+#nav .subnav a {
+line-height: 54px;
+color: black;
+padding: 0 44px;
+}
+
+/* Slider ====================================*/
+
+/* #slider{
+
+    position: relative;
+    margin-top: 54px;
+    padding-top: 60%;
+    background: url('/assets/img/banner.jpg') top center / cover no-repeat;
+}
+
+#slider .text-content{
+    position: absolute;
+    text-align: center;
+    top: 70px;
+    font-family: 'albertus';
+    color: whitesmoke;
+}
+#slider .text-heading{
+    font-size: 44px;
+    margin-bottom: 20px;
+}
+#slider .text-description{
+    font-size: 30px;
+}  */
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 95%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 54px;
+}
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  .slider-header{
+    position: absolute;
+    bottom: 10%;
+    font-size: 6vw;
+    padding: 4px 8px;
+    font-family: 'albertus';
+    color: #f2f2f2;
+    text-align: center;
+    width: 100%;
+    letter-spacing: 5px;
+    margin-bottom: 16px;
+}
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.3);
+  }
+  
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 2.5vw;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 16px;
+    width: 100%;
+    text-align: center;
+    font-family: 'albertus';
+    letter-spacing: 4px;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+/* ============================================================== */
+/* Content */
+
+#content{
+
+}
+
+#content .content-section{
+width: 90%;
+max-width: 100%;
+margin-left: auto;
+margin-right: auto;
+padding: 64px 8px;
+margin-top: 48px;
+}
+
+#content .section-heading{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    font-family: 'albertus';
+
+}
+
+#content .section-sub-heading{
+margin-top: 25px;
+margin-bottom: 25px;
+font-style: italic;
+text-align: center;
+color: rgba(0, 0, 0, 0.5);
+font-size: 24px;
+font-family: 'albertus';
+}
+
+#content .section-paragraph{
+font-size: 24px;
+text-align: justify;
+font-family: 'albertus';
+}
+
+/* Danh sach thanh vien */
+#content .member-list{
+    margin-top: 64px;
+    font-size: 24px;
+    margin-bottom: 48px;
+}
+
+#content .member {
+    height: 500px;
+    font-weight: 700;
+    /* font-style:italic; */
+    font-size: 30px;
+    float: left;
+    position: relative;
+    font-family: 'albertus';
+    /* font-family: 'albertus'; */
+    /* background-size: cover; */
+    /* object-fit: cover; */
+}
+
+#content .member .pic{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 0px 10px 10px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.tour-ticket{
+    background-color: black;
+    width: 100%;
+}
+
+.ticket-list{
+
+    line-height: 98px;
+    list-style: none;
+      
+}
+
+.ticket-list li{
+    position: relative;
+    margin-bottom: 20px;
+    background-color: white;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius:7px;
+}
+
+.date{
+    background-color: #911a20;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+}
+
+.day{
+    position: absolute;
+    top:60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* float: left; */
+    font-size: 44px;
+    font-weight: 1000;
+    text-align: center;
+    font-family: 'albertus';
+    /* height: 50px;
+    width: 100px; */
+
+}
+
+.month{
+    font-size: 24px;
+    top:25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 500;   
+    text-align: center;
+    position: absolute;
+    font-family: 'albertus';
+}
+
+.location{
+    /* position: absolute; */
+    margin-top: 100px;
+    margin-left: 110px;
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: 'albertus';
+
+}
+
+.area{  
+    float: right;
+    font-weight: 400;
+    margin-right: 20px;
+    font-size: 20px;
+    opacity: 0.7;
+}
+
+/* Danh sach cac noi se dien ra su kien  */
+
+.place-list{
+    margin-top: 48px;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-bottom: 48px;
+
+}
+
+.place-item{
+    /* position: relative; */
+    float: left;    
+    padding : 0 20px;
+
+}
+/* hinh cua thanh pho noi dien ra su kien */
+.place-img{
+/* position: absolute; */
+height: 300px;
+width: 100%;
+}
+.place-img:hover{
+    opacity: 0.5;
+}
+.place-img .city-pic{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+/* Thong tin ve noi to chuc : city, time , info */
+.place-description{
+    height: 300px;
+    background-color: whitesmoke;
+    padding: 15px;
+    position: relative;
+    font-family: 'albertus';
+    letter-spacing: 1px;
+}
+.place-city{
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: 4px;
+    font-family: 'albertus';
+    
+}
+.place-time{
+    margin-top: 15px;
+    opacity: 0.5;
+    font-size: 20px;
+}
+.place-info{
+    margin-top: 15px;
+    line-height: 1.4;
+    font-size: 20px;
+}
+/* Ve thuong */
+.gen-tick{
+    font-weight: 600;
+    /* display: inline-block; */
+    padding: 15px;
+    background-color: #911a20;
+    color: whitesmoke;
+    text-decoration: none;
+    position: absolute;
+    left :20px;
+    bottom: 15px;
+    width: 150px;
+    text-align: center;
+}
+.gen-tick:hover{
+    background-color: black;
+    border: 2px #911a20 solid;
+    color:#911a20;
+    cursor: pointer;
+}
+/* Ve vip */
+.vip-tick{
+    font-weight: 600;
+    /* display: inline-block; */
+    padding: 15px;
+    background-color: #911a20;
+    color: whitesmoke;
+    text-decoration: none;
+    position: absolute;
+    right :20px;
+    bottom: 15px;
+    width: 150px;
+    text-align: center;
+}
+.vip-tick:hover{
+    background-color: black;
+    border: 2px #911a20 solid;
+    color:#911a20;
+    cursor: pointer;
+}
+/* Contact Content */
+.contact-content{
+    margin-top: 48px;
+
+}
+.contact-info{
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.6;
+    padding: 50px 100px;
+
+}
+
+.contact-info input{
+    width: 20px;
+    display: inline-block;
+    margin-right: 12px;
+
+}
+.contact-info p{
+    margin-left: 70px;
+}
+
+
+.contact-form .form-control{
+    font-size: 18px;
+    font-family: 'albertus';
+    text-align: center;
+    font-weight: 600;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px #911a20 solid;
+    padding: 15px;
+    width: 100%;
+}
+.contact-form input:focus{
+    outline: none;
+}
+.submit-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+
+}
+.form-submit-btn{
+    color: black;
+    background-color: #911a20;
+    font-family: 'albertus';
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    padding: 16px 80px;
+    border: none;
+}
+.form-submit-btn:hover{
+    cursor: pointer;
+    color: white;
+}
+
+/* OTHER MEDIA SECTION */
+.other-media{
+    position: relative;
+}
+
+.other-media .media-img{
+width: 100%;
+}
+.media-info{
+position: absolute;
+font-size: 100px;
+font-weight: 600;
+letter-spacing: 10px;
+left:50%;
+bottom:5%;
+transform: translateX(-50%);    
+mix-blend-mode: overlay;
+color: red;
+padding: 5px;
+text-align: center;
+text-transform: uppercase;
+}
+
+/* =========================================================================== */
+#footer{
+padding: 64px 16px;
+text-align: center;
+}
+.social-list{
+font-size: 24px;
+}
+.social-list a{
+color: #911a20;
+text-decoration: none;
+}
+.social-list a:hover , .copyright a:hover{
+    opacity: 0.7;
+}
+
+.copyright {
+    margin-top: 15px;
+    color: #333;
+}
+.copyright a{
+    color: #911a20;
+}
+
+/* ============================================== */
+.modal-gen.open{
+    display: flex;
+}
+.modal-gen{
+position: fixed;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: rgba(0, 0, 0, 0.3);
+display: none;
+align-items: center;
+justify-content: center;
+}
+.modal-container{
+    width: 900px;
+    background-color: white;
+    /* border: 1px solid black; */
+    min-height: 300px;
+    position: relative;
+    font-family: 'albertus';
+    max-width: calc(100% - 32px);
+    animation: modalFadeIn ease 0.5s;
+}
+.close-modal{
+    position: absolute;
+    right:0;
+    top: 0;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 12px;
+}
+.close-modal:hover{
+    background-color: rgba(0 , 0 , 0 , 0.3);
+    color: white;
+}
+.modal-gen .modal-header{
+background-color: #911a20;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 150px;
+font-size: 30px;
+font-weight: 600;
+text-transform: uppercase;
+}
+.ti-bag{
+    margin-right: 10px;
+}
+.modal-body{
+padding: 16px;
+height: 250px;
+position: relative;
+}
+.modal-label{
+    display: block;
+    margin-bottom: 7px;
+}
+.modal-footer{
+/* position: absolute;
+bottom: 0;
+right: 0;*/
+padding: 15px; 
+text-align: right;
+}
+.modal-help-link{
+    color: #911a20;
+}
+.modal-input{
+    border: solid 1px #ccc;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+.buy-place{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#buy-button{
+    height: 48px;
+    width: 300px;
+    padding: 5px;
+    /* border:none; */
+    font-size: 20px;
+    border: 1px solid black;
+    background-color: #911a20;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+}
+.change-to{
+    padding: 10px;
+}
+.change-buy-button{
+    height: 48px;
+    width: 300px;
+    border: 1px solid black;
+    padding: 5px;
+    font-size: 20px;
+    /* border:none; */
+    background-color: #911a20;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+}
+#buy-button:hover{
+    opacity: 0.9;
+}
+
+.change-buy-button:hover{
+    opacity: 0.9;
+}
+/* ===============================Start Modal VIP============================== */
+.modal-vip.open{
+    display: flex;
+}
+.modal-vip{
+position: fixed;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: rgba(0, 0, 0, 0.3);
+display: none;
+align-items: center;
+justify-content: center;
+}
+.modal-container-vip{
+    width: 900px;
+    background-color: white;
+    /* border: 1px solid black; */
+    min-height: 300px;
+    position: relative;
+    font-family: 'albertus';
+    max-width: calc(100% - 32px);
+    animation: modalFadeIn ease 0.5s;
+}
+.close-modal-vip{
+    position: absolute;
+    right:0;
+    top: 0;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 12px;
+}
+.close-modal-vip:hover{
+    background-color: rgba(0 , 0 , 0 , 0.3);
+    color: white;
+}
+.modal-vip .modal-header-vip{
+background-color: #911a20;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 150px;
+font-size: 30px;
+font-weight: 600;
+text-transform: uppercase;
+}
+.ti-bag{
+    margin-right: 10px;
+}
+.modal-body-vip{
+padding: 16px;
+height: 250px;
+position: relative;
+}
+.modal-label{
+    display: block;
+    margin-bottom: 7px;
+}
+.modal-footer-vip{
+/* position: absolute;
+bottom: 0;
+right: 0;*/
+padding: 15px; 
+text-align: right;
+}
+.modal-help-link{
+    color: #911a20;
+}
+.modal-input{
+    border: solid 1px #ccc;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+.buy-place{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#buy-button{
+    height: 48px;
+    width: 300px;
+    padding: 5px;
+    /* border:none; */
+    font-size: 20px;
+    border: 1px solid black;
+    background-color: #911a20;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+}
+.change-to{
+    padding: 10px;
+}
+.change-buy-button{
+    height: 48px;
+    width: 300px;
+    border: 1px solid black;
+    padding: 5px;
+    font-size: 20px;
+    /* border:none; */
+    background-color: #911a20;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+}
+#buy-button:hover{
+    opacity: 0.9;
+}
+
+.change-buy-button:hover{
+    opacity: 0.9;
+}
+/* ========================================End Modal VIP==================================== */
+@keyframes modalFadeIn{
+    from{
+    opacity: 0;
+    transform: translateY(-200px);
+    }
+    to{
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+input[type=checkbox] {
+    transform: scale(2);
+}

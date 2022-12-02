@@ -1,0 +1,223 @@
+@media (min-width : 1024px){
+    .menu-icon{
+        display: none;
+    }
+}
+/* Tablet */
+@media(min-width:740px) and (max-width:1023px){
+    .m-col-full{
+        width: 100%;
+    }
+    .m-full-width{
+        width: 100%;
+    }
+    #nav li a{
+            padding: 0px 20px;
+    }
+    .menu-icon{
+        display: none;
+    }
+    /* ==============TOUR LIST================== */
+    .ticket-list li{
+        height: 250px;
+    }
+    .ticket-list .date{
+        width: 100%;
+        border-radius: 7px;
+    }
+    .ticket-list .location, .ticket-list .area{
+        font-size: 24px;
+    }
+    .ticket-list .location{
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    margin: 0;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    letter-spacing: 1px;
+    }
+    .ticket-list .area{
+     width: 100%;
+     position: absolute;
+     bottom: 0;
+     left: 50%;
+     transform: translateX(-50%);
+     text-align: center;
+     margin: 0;
+    }
+    /* ================================ */
+    .place-item{
+        margin-top: 32px;
+    }
+    .gen-tick{
+        width: 100%;
+        left: 0;
+        bottom: 55px;
+    }
+    .vip-tick{
+        width: 100%;
+        right: 0;
+        bottom: 0;
+    }
+
+    .contact-info{
+        padding: 0;
+    }
+    .contact-info p{
+        display: inline-block;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+
+    .media-info{
+        font-size: 88px;
+    }
+}
+/* Mobile======================================================================================================= */
+@media (max-width : 739px){
+    .s-full-width{
+        width: 100%;
+    }
+    .s-col-full{
+    width: 100%;
+    }
+    #header{
+        overflow: hidden;
+    }
+    #nav{
+        display: block;
+    }
+    #nav .subnav{
+        position: initial;
+    
+    }
+    #nav .subnav a{
+        padding: 0px 65px;
+        border-bottom: 1px solid black;
+    }
+
+    #nav > li{
+    display: block;
+    }
+    #nav > li:first-child{
+        display: inline-block;
+    }
+    .search-btn{
+        display: none;
+    }
+    /* Slider */
+    #slider .text-content{
+        top: 60%
+    }
+    #slider .text-heading{
+        font-size: 18px;
+    }
+    #slider .text-description{
+        font-size: 15px;
+    }
+    /*  */
+
+    /* Member list */
+    .mobile-member-item{
+        width: 100%;
+    }
+    
+    #content .member .pic{
+        width: 90%;
+        height: 80%;
+    }
+    #content .member-description{
+        display: none;
+    }
+
+    /*==========================Ticket place================================ */
+    .ticket-list li{
+        height: 250px;
+    }
+    .ticket-list .date{
+        width: 100%;
+        border-radius: 7px;
+    }
+    .ticket-list .location, .ticket-list .area{
+        font-size: 15px;
+    }
+    .ticket-list .location{
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    margin: 0;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    letter-spacing: 1px;
+    }
+    .ticket-list .area{
+     width: 100%;
+     position: absolute;
+     bottom: 0;
+     left: 50%;
+     transform: translateX(-50%);
+     text-align: center;
+     margin: 0;
+    }
+    .place-item{
+        float: none;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .place-info{
+        font-size: 15px;
+    }
+    .place-description{
+        height: 250px;
+    }
+    .gen-tick{
+        bottom: 0px;
+        left:0;
+        width: 50%;
+        border: none;
+        border-right: 1px solid black;
+    }
+    .vip-tick{
+        bottom: 0;
+        right:0;
+        width: 50%;
+        border: none;
+    }
+    .vip-tick:hover , .gen-tick:hover{
+        border: none;
+    }
+    #buy-button, .change-buy-button{
+        height: 60px;
+    }
+    .modal-help{
+        padding-top: 5px;
+    }
+    /* ===================================================================== */
+    .contact-info{
+        padding: 0;
+        margin: 0;
+    }
+    .contact-form{
+        margin-top: 16px;
+    }
+    .contact-info h3{
+        font-size: 20px;
+        text-align: center;
+    }
+    .contact-info p{
+    font-size: 18px;
+    margin-left: 0px;
+    }
+    .contact-info input{
+        margin-left:20px ;
+    }
+    .form-control{
+        margin-top: 8px;
+    }
+    .media-info{
+        font-size: 44px;
+    }
+}
